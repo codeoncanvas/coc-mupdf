@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block
+	name="CoC-MuPdf"
+	id=""
+	author="Code on Canvas"
+	summary="Wrapper for MuPDF 1.9a"
+	license=""
+	url="https://github.com/codeoncanvas/coc-mupdf"
+	git="git@github.com:codeoncanvas/coc-mupdf.git"
+	version=""
+	library=""
+	>
+	
+	<headerPattern>src/*.h</headerPattern>
+	<sourcePattern>src/*.cpp</sourcePattern>
+
+	<includePath system="true">libs/mupdf/include</includePath>
+
+	<platform os="macosx">
+		
+		<libraryPath>libs/mupdf/lib/osx</libraryPath>
+
+		<buildCopy destination="executables">libs/mupdf/lib/osx/libmupdf.a</buildCopy>
+		<buildCopy destination="executables">libs/mupdf/lib/osx/libmupdfthird.a</buildCopy>
+		<buildCopy destination="executables">libs/mupdf/lib/osx/libmutools.a</buildCopy>
+
+		<staticLibrary>libs/mupdf/lib/osx/libmupdf.a</staticLibrary>
+		<staticLibrary>libs/mupdf/lib/osx/libmupdfthird.a</staticLibrary>
+		<staticLibrary>libs/mupdf/lib/osx/libmutools.a</staticLibrary>
+
+	</platform>
+	
+<!-- 	<platform os="msw">
+	</platform> -->
+
+</block>
+</cinder>
