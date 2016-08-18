@@ -42,6 +42,9 @@ public:
     //! returns mupdf page count from doc load
     int getNumPages();
 
+    //! returns loaded pages as textures
+    std::vector<ci::gl::TextureRef> & getPages() { return pages; }
+
 protected:
 
     void generateAll();
