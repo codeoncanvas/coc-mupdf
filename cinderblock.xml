@@ -31,8 +31,19 @@
 
 	</platform>
 	
-<!-- 	<platform os="msw">
-	</platform> -->
+	<platform os="msw">
+
+		<includePath system="false">src</includePath>
+
+		<buildCopy destination="executables">libs/mupdf/lib/msw/x64/libfonts.lib</buildCopy>
+		<buildCopy destination="executables">libs/mupdf/lib/msw/x64/libmupdf.lib</buildCopy>
+		<buildCopy destination="executables">libs/mupdf/lib/msw/x64/libthirdparty.lib</buildCopy>
+
+		<staticLibrary>libs/mupdf/lib/msw/x64/libfonts.lib</staticLibrary>
+		<staticLibrary>libs/mupdf/lib/msw/x64/libmupdf.lib</staticLibrary>
+		<staticLibrary>libs/mupdf/lib/msw/x64/libthirdparty.lib</staticLibrary>
+
+	</platform>
 
 </block>
 </cinder>
