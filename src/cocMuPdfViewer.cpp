@@ -31,7 +31,7 @@ void MuPdfViewer::setup( std::string _assetPath, int _dpi, float _zoom ) {
     }
     
     //OPEN
-    string path = getAssetPath(_assetPath).generic_string(); // path of PDF, XPS, CBZ or EPUB document to open
+    string path = _assetPath; // path of PDF, XPS, CBZ or EPUB document to open
     CI_LOG_V("Opening: " << path );
 
     fz_try(ctx)
