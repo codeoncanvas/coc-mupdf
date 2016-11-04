@@ -9,6 +9,19 @@ namespace coc {
 
     
 void MuPdfViewer::setup( std::string _assetPath, int _dpi, float _zoom ) {
+
+    if (!_assetPath.length()) {
+        CI_LOG_E("No PDF path!");
+        pages.clear();
+        pageCount = 0;
+        return;
+    }
+    if (!fs::exists(_assetPath)) {
+        CI_LOG_E("No PDF file!");
+        pages.clear();
+        pageCount = 0;
+        return;
+    }
         
     float zoom = _zoom; //Zoom level is in percent (100 percent is 72 dpi)
     float rotate = 0; //Rotation is in degrees clockwise
