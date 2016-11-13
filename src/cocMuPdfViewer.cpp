@@ -99,19 +99,11 @@ void MuPdfViewer::generateAll()
         }
 
         if (pix) {
-            Surface surface(pix->w, pix->h, false);
-            if (i>0) {
-                ivec2 newSize = surface.getSize();
-                if (newSize != lastSize) {
-                    CI_LOG_E("Page size different to last");
-                }
-                lastSize = newSize;
-            }
-            else {
-                lastSize = surface.getSize();
-            }
-            memcpy( surface.getData(), pix->samples, pix->w * pix->h * 3);
-            pages.push_back( gl::Texture::create( surface ) );
+
+//            gl::Texture::Format fmt;
+//            fmt.loadTopDown(false); //bug in cinder - does not work
+
+            pages.push_back( gl::Texture::create( pix->samples, GL_RGB, pix->w, pix->h ) );
 
             fz_drop_pixmap(ctx, pix);//cleanup
         }
